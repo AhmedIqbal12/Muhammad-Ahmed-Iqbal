@@ -258,6 +258,221 @@ body {
     font-size: 0.9rem;
 }
 
+
+/* Who I Am Section */
+/* ========================= */
+/* WHO I AM – RESPONSIVE UX */
+/* ========================= */
+
+.who-am-i {
+    padding: 100px 0;
+    background: var(--dark-bg);
+    position: relative;
+}
+
+/* Desktop Layout */
+.about-content {
+    display: grid;
+    grid-template-columns: minmax(280px, 420px) 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+/* Image Styling */
+.about-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid var(--primary-color);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Text */
+.about-text {
+    padding-top: 0.5rem;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Stats */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin: 3rem 0 2rem;
+}
+
+.stat-item {
+    text-align: left;
+    padding: 1.4rem;
+    background: linear-gradient(145deg, #0e0e0e, #141414);
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Skill / Personality Tags */
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tag {
+    background: rgba(140, 0, 255, 0.15);
+    color: var(--primary-color);
+    padding: 0.45rem 1.3rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(140, 0, 255, 0.3);
+}
+
+/* ===================== */
+/* TABLET & MOBILE FLOW */
+/* ===================== */
+
+@media (max-width: 992px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-image {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        text-align: left;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Exact Match */
+@media (max-width: 600px) {
+    .who-am-i {
+        padding: 70px 0;
+    }
+
+    .about-image {
+        max-width: 100%;
+        border-radius: 16px;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto; /* CRITICAL: no height restriction */
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .stat-item {
+        text-align: left;
+        padding: 1.2rem;
+    }
+
+    .skills-tags {
+        justify-content: flex-start;
+    }
+}
+/* ============================= */
+/* FORCE MOBILE STACK + IMAGE   */
+/* ============================= */
+
+@media (max-width: 900px) {
+
+    /* Force vertical layout */
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    /* IMAGE MUST NEVER SHRINK */
+    .about-image {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+        flex-shrink: 0;
+    }
+
+    /* Lock image proportions */
+    .about-image img {
+        width: 100%;
+        height: auto;
+        min-height: 520px;     /* 👈 KEY FIX */
+        object-fit: cover;
+    }
+
+    /* Text always below image */
+    .about-text {
+        width: 100%;
+    }
+
+    /* Stats become mobile-friendly */
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================= */
+/* SMALL PHONES – EXACT MATCH   */
+/* ============================= */
+
+@media (max-width: 480px) {
+
+    .about-image img {
+        min-height: 480px;   /* iPhone-sized screens */
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+
 /* What I Do Section */
 .what-i-do {
     padding: 100px 0;
