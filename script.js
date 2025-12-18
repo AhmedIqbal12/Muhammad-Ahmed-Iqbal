@@ -55,7 +55,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Animate elements on scroll
-const animateOnScroll = document.querySelectorAll('.service-card, .project-card, .timeline-item, .stat-item');
+const animateOnScroll = document.querySelectorAll('.service-card, .timeline-item, .stat-item, .trait-card');
 animateOnScroll.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
@@ -63,95 +63,60 @@ animateOnScroll.forEach(el => {
     observer.observe(el);
 });
 
-// Projects Slider Functionality
-let currentSlideIndex = 0;
-const slides = document.querySelectorAll('.project-slide');
-const indicators = document.querySelectorAll('.indicator');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
+// Form Submission
+const contactForm = document.querySelector('.contact-form form');
 
-function showSlide(index) {
-    // Remove active class from all slides
-    slides.forEach(slide => {
-        slide.classList.remove('active', 'slide-out-left', 'slide-out-right');
-    });
+// 3D Carousel Functionality
+const carouselTrack = document.querySelector('.carousel-track');
+const carouselItems = document.querySelectorAll('.carousel-item');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const currentIndexSpan = document.querySelector('.current-index');
+const itemWidth = 320 + 32; // width + gap
+let currentIndex = 0;
+
+function updateCarousel() {
+    const translateValue = -currentIndex * itemWidth;
+    carouselTrack.style.transform = `translateX(${translateValue}px)`;
     
-    // Remove active class from all indicators
-    indicators.forEach(indicator => {
-        indicator.classList.remove('active');
-    });
-    
-    // Add active class to current slide and indicator
-    slides[index].classList.add('active');
-    indicators[index].classList.add('active');
-    
-    currentSlideIndex = index;
+    if (currentIndexSpan) {
+        currentIndexSpan.textContent = (currentIndex % carouselItems.length) + 1;
+    }
 }
 
-function nextSlide() {
-    let nextIndex = (currentSlideIndex + 1) % slides.length;
-    slides[currentSlideIndex].classList.add('slide-out-left');
-    setTimeout(() => showSlide(nextIndex), 100);
+function nextCarouselItem() {
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+    updateCarousel();
 }
 
-function prevSlide() {
-    let prevIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-    slides[currentSlideIndex].classList.add('slide-out-right');
-    setTimeout(() => showSlide(prevIndex), 100);
+function prevCarouselItem() {
+    currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+    updateCarousel();
 }
 
-// Event listeners for slider buttons
 if (prevBtn && nextBtn) {
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevCarouselItem);
+    nextBtn.addEventListener('click', nextCarouselItem);
 }
 
-// Event listeners for indicators
-indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => {
-        if (index !== currentSlideIndex) {
-            if (index > currentSlideIndex) {
-                slides[currentSlideIndex].classList.add('slide-out-left');
-            } else {
-                slides[currentSlideIndex].classList.add('slide-out-right');
-            }
-            setTimeout(() => showSlide(index), 100);
-        }
-    });
-});
-
-// Keyboard navigation for slider
+// Keyboard navigation for carousel
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-        prevSlide();
-    } else if (e.key === 'ArrowRight') {
-        nextSlide();
+    if (document.querySelector('#projects:target')) {
+        if (e.key === 'ArrowLeft') prevCarouselItem();
+        if (e.key === 'ArrowRight') nextCarouselItem();
     }
 });
 
-// Auto-play slider (optional - uncomment to enable)
-// let autoplayInterval = setInterval(nextSlide, 5000);
-
-// Pause autoplay on hover (if autoplay is enabled)
-// const sliderWrapper = document.querySelector('.projects-slider-wrapper');
-// if (sliderWrapper) {
-//     sliderWrapper.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-//     sliderWrapper.addEventListener('mouseleave', () => {
-//         autoplayInterval = setInterval(nextSlide, 5000);
-//     });
-// }
-
-// Touch/Swipe support for mobile
+// Touch support for carousel
 let touchStartX = 0;
 let touchEndX = 0;
 
-const slider = document.querySelector('.projects-slider');
-if (slider) {
-    slider.addEventListener('touchstart', (e) => {
+if (carouselTrack) {
+    carouselTrack.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
 
-    slider.addEventListener('touchend', (e) => {
+    carouselTrack.addEventListener('touchend', (e) => {
         touchEndX = e.changedTouches[0].screenX;
         handleSwipe();
     }, { passive: true });
@@ -163,15 +128,13 @@ function handleSwipe() {
     
     if (Math.abs(diff) > swipeThreshold) {
         if (diff > 0) {
-            nextSlide();
+            nextCarouselItem();
         } else {
-            prevSlide();
+            prevCarouselItem();
         }
     }
 }
 
-// Form Submission
-const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -275,14 +238,6 @@ const statsSection = document.querySelector('.stats');
 if (statsSection) {
     statsObserver.observe(statsSection);
 }
-
-// Add hover effect to slider
-const projectContents = document.querySelectorAll('.project-content');
-projectContents.forEach(content => {
-    content.addEventListener('mouseenter', () => {
-        content.style.transition = 'all 0.3s ease';
-    });
-});
 
 // Timeline animation
 const timelineItems = document.querySelectorAll('.timeline-item');
