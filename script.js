@@ -63,26 +63,112 @@ animateOnScroll.forEach(el => {
     observer.observe(el);
 });
 
-// Project Carousel Dots
-const dots = document.querySelectorAll('.dot');
-const projectCards = document.querySelectorAll('.project-card');
-let currentSlide = 0;
+// Projects Slider Functionality
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.project-slide');
+const indicators = document.querySelectorAll('.indicator');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
 
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        dots.forEach(d => d.classList.remove('active'));
-        dot.classList.add('active');
-        currentSlide = index;
-        
-        // Optional: Add sliding animation for projects
-        // This is a simple example - you can enhance this
-        projectCards.forEach((card, cardIndex) => {
-            if (Math.floor(cardIndex / 3) === index) {
-                card.style.display = 'block';
+function showSlide(index) {
+    // Remove active class from all slides
+    slides.forEach(slide => {
+        slide.classList.remove('active', 'slide-out-left', 'slide-out-right');
+    });
+    
+    // Remove active class from all indicators
+    indicators.forEach(indicator => {
+        indicator.classList.remove('active');
+    });
+    
+    // Add active class to current slide and indicator
+    slides[index].classList.add('active');
+    indicators[index].classList.add('active');
+    
+    currentSlideIndex = index;
+}
+
+function nextSlide() {
+    let nextIndex = (currentSlideIndex + 1) % slides.length;
+    slides[currentSlideIndex].classList.add('slide-out-left');
+    setTimeout(() => showSlide(nextIndex), 100);
+}
+
+function prevSlide() {
+    let prevIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+    slides[currentSlideIndex].classList.add('slide-out-right');
+    setTimeout(() => showSlide(prevIndex), 100);
+}
+
+// Event listeners for slider buttons
+if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+}
+
+// Event listeners for indicators
+indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+        if (index !== currentSlideIndex) {
+            if (index > currentSlideIndex) {
+                slides[currentSlideIndex].classList.add('slide-out-left');
+            } else {
+                slides[currentSlideIndex].classList.add('slide-out-right');
             }
-        });
+            setTimeout(() => showSlide(index), 100);
+        }
     });
 });
+
+// Keyboard navigation for slider
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        prevSlide();
+    } else if (e.key === 'ArrowRight') {
+        nextSlide();
+    }
+});
+
+// Auto-play slider (optional - uncomment to enable)
+// let autoplayInterval = setInterval(nextSlide, 5000);
+
+// Pause autoplay on hover (if autoplay is enabled)
+// const sliderWrapper = document.querySelector('.projects-slider-wrapper');
+// if (sliderWrapper) {
+//     sliderWrapper.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+//     sliderWrapper.addEventListener('mouseleave', () => {
+//         autoplayInterval = setInterval(nextSlide, 5000);
+//     });
+// }
+
+// Touch/Swipe support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+const slider = document.querySelector('.projects-slider');
+if (slider) {
+    slider.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    slider.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+}
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            nextSlide();
+        } else {
+            prevSlide();
+        }
+    }
+}
 
 // Form Submission
 const contactForm = document.querySelector('.contact-form form');
@@ -190,10 +276,11 @@ if (statsSection) {
     statsObserver.observe(statsSection);
 }
 
-// Add hover effect to project cards
-projectCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transition = 'all 0.3s ease';
+// Add hover effect to slider
+const projectContents = document.querySelectorAll('.project-content');
+projectContents.forEach(content => {
+    content.addEventListener('mouseenter', () => {
+        content.style.transition = 'all 0.3s ease';
     });
 });
 
