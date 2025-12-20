@@ -207,6 +207,165 @@ const animateCounter = (element, target, duration = 2000) => {
     }, 16);
 };
 
+// Carousel functionality
+class Carousel {
+    constructor() {
+        this.cards = document.querySelectorAll('.card');
+        this.currentIndex = 0;
+        this.totalCards = this.cards.length;
+        this.autoPlayInterval = null;
+        this.autoPlayDelay = 5000;
+        
+        this.init();
+    }
+    
+    init() {
+        this.addTouchSupport();
+    }
+    
+    attachEventListeners() {
+        // Keyboard navigation removed
+        // Auto-play pause on hover removed
+    }
+    
+    addTouchSupport() {
+        const carousel = document.querySelector('.carousel');
+        let startX = 0;
+        let endX = 0;
+        
+        carousel.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        carousel.addEventListener('touchmove', (e) => {
+            endX = e.touches[0].clientX;
+        });
+        
+        carousel.addEventListener('touchend', () => {
+            const diff = startX - endX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    this.nextSlide();
+                } else {
+                    this.prevSlide();
+                }
+            }
+        });
+    }
+    
+    goToSlide(index) {
+        this.currentIndex = index;
+        this.updateCarousel();
+        this.resetAutoPlay();
+    }
+    
+    nextSlide() {
+        this.currentIndex = (this.currentIndex + 1) % this.totalCards;
+        this.updateCarousel();
+        this.resetAutoPlay();
+    }
+    
+    prevSlide() {
+        this.currentIndex = (this.currentIndex - 1 + this.totalCards) % this.totalCards;
+        this.updateCarousel();
+        this.resetAutoPlay();
+    }
+    
+
+}
+
+// 3D parallax effect on mouse move
+function init3DEffect() {
+    const cards = document.querySelectorAll('.card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+            
+            card.style.transform = `
+                perspective(1000px)
+                rotateX(${rotateX}deg)
+                rotateY(${rotateY}deg)
+                translateY(-15px)
+                scale(1.02)
+            `;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+}
+
+// Intersection Observer for scroll animations
+function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    });
+    
+    document.querySelectorAll('.card').forEach(card => {
+        observer.observe(card);
+    });
+}
+
+// Image lazy loading with fade-in effect
+function initImageLoading() {
+    const images = document.querySelectorAll('.card-image img');
+    
+    images.forEach(img => {
+        img.addEventListener('load', function() {
+            this.style.animation = 'none';
+            this.style.opacity = '0';
+            setTimeout(() => {
+                this.style.transition = 'opacity 0.5s ease';
+                this.style.opacity = '1';
+            }, 10);
+        });
+        
+        // Handle error
+        img.addEventListener('error', function() {
+            this.style.animation = 'none';
+            this.parentElement.style.background = '#2a2a2a';
+        });
+    });
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new Carousel();
+    init3DEffect();
+    initScrollAnimations();
+    initImageLoading();
+    
+    // Add smooth scrolling
+    document.documentElement.style.scrollBehavior = 'smooth';
+});
+
+// Handle window resize
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        // Reinitialize 3D effects on resize
+        init3DEffect();
+    }, 250);
+});
 // Trigger counter animation when stats come into view
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
