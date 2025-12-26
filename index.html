@@ -3,30 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUHAMMAD AHMED IQBAL</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.ico">
-    <link rel="apple-touch-icon" href="favicon.ico">
-
+    <title>Shaping Tomorrow with AI</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <!-- Header/Hero Section -->
     <header class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="15.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        
         <nav class="navbar">
             <div class="nav-content">
-                <div class="logo">Portfolio.</div>
+                <div class="logo">
+                    <span class="logo-ai">AI</span>
+                    <span class="logo-text">Portfolio</span>
+                </div>
                 <ul class="nav-menu">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#work">Services</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#achievements">Achievements</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="btn-primary">Let's Talk</a></li>
                 </ul>
+                <div class="nav-cta">
+                    <a href="#contact" class="btn-nav">Let's Talk</a>
+                </div>
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -34,17 +38,70 @@
                 </div>
             </div>
         </nav>
-        <div class="hero-content">
-            <h1 class="hero-title"><br>SHAPING<br>YOUR<br>FUTURE WITH AI</h1>
-            <p class="hero-subtitle">Final-year BS Artificial Intelligence graduate on a mission to create AI solutions for positive social impact.
 
-View My Work<br>cloud-native platform built specifically for enterprise AI</p>
-            <button class="btn-primary">Get In Touch</button>
-            <button class="btn-secondary">View Profile</button>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">✨</span>
+                    <span class="badge-text">AI-Powered Solutions</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="title-line">Transforming</span>
+                    <span class="title-line gradient-text">Tomorrow</span>
+                    <span class="title-line">With AI Innovation</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Building intelligent systems that solve real-world problems through 
+                    cutting-edge artificial intelligence, machine learning, and data analytics
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-hero primary">
+                        <span>Explore My Work</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn-hero secondary">
+                        <span>Get In Touch</span>
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-box">
+                        <div class="stat-value">25+</div>
+                        <div class="stat-label">AI Projects</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-box">
+                        <div class="stat-value">5+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-box">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-scroll">
+                <div class="scroll-indicator">
+                    <span class="scroll-text">Scroll to explore</span>
+                    <div class="scroll-arrow">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-<!-- Who I Am Section -->
+    <!-- Who I Am Section -->
     <section id="about" class="who-am-i">
         <div class="container">
             <h2 class="section-title">WHO I AM</h2>
@@ -53,10 +110,12 @@ View My Work<br>cloud-native platform built specifically for enterprise AI</p>
                     <img src="e.jpeg" alt="Profile">
                 </div>
                 <div class="about-text">
-                    <p>As a final-year BS Artificial Intelligence graduate, I'm dedicated to leveraging cutting-edge AI technologies to solve real-world problems. My work spans healthcare, agriculture, and financial sectors, always with a focus on creating measurable positive impact.
+                    <p>I am an AI Engineer building systems that solve real problems, not just pass benchmarks. From healthcare to agriculture, my work is driven by one purpose: use AI to protect lives and empower people.
 
-I combine technical expertise with strong leadership abilities, having served as President of my university's study circle. My strategic mindset and high emotional intelligence enable me to build and lead teams effectively while maintaining focus on innovation.</p>
-                    <p>I stay calm under pressure and enjoy solving hard problems step by step.</p>
+A Prime Minister’s Award–nominated project reminded me that impact matters more than titles. I believe setbacks are data points, not failures.
+
+Still learning. Still building. Still in love with the process.</p>
+                    <p>I combine technical expertise from years of hands-on work at leading tech companies with strong people-management skills gained from overseeing high-performance teams, allowing me to deliver powerful AI-driven results and foster a collaborative work culture.</p>
                     <div class="stats">
                         <div class="stat-item">
                             <div class="stat-number">10+</div>
@@ -93,470 +152,304 @@ I combine technical expertise with strong leadership abilities, having served as
             <h2 class="section-title">WHAT I DO</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>AI & Machine<br>Learning</h3>
-                    <ul>
-                        <li>Neural Networks</li>
-                        <li>Deep Learning Models</li>
-                        <li>Computer Vision</li>
-                        <li>NLP Solutions</li>
-                        <li>Predictive Analytics</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Domain Expertise</h3>
-                    <ul>
-                        <li>Machine Learning</li>
-                        <li>Data Engineering</li>
-                        <li>Cloud Architecture</li>
-                        <li>MLOps</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Development</h3>
-                    <ul>
-                        <li>Full Stack Development</li>
-                        <li>API Design</li>
-                        <li>Database Management</li>
-                        <li>Cloud Deployment</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Business & Service</h3>
-                    <ul>
-                        <li>Strategy & Consulting</li>
-                        <li>Project Management</li>
-                        <li>Technical Leadership</li>
-                        <li>Client Relations</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Profile Section -->
-    <section id="profile" class="profile">
-        <div class="container">
-            <div class="profile-content">
-                <div class="profile-image">
-                    <img src="c.jpeg" alt="Profile Picture">
-                </div>
-                <div class="profile-text">
-                    <h2 class="profile-title">My personality</h2>
-                    <p class="profile-description">I am a purpose-driven AI engineer who believes technology should help people.
-I stay calm under pressure and enjoy solving hard problems step by step.
-I learn fast, adapt quickly, and never stop improving my skills.
-I value discipline, honesty, and long-term impact over shortcuts.
-I work well in teams but can lead when needed.
-My goal is simple: use AI to create real, positive change in the world.
-                    
-                    <p class="profile-secondary">I combine technical expertise with strong leadership abilities, having served as President of my university's study circle. My strategic mindset and high emotional intelligence enable me to build and lead teams effectively while maintaining focus on innovation.</p>
-                    
-                    <div class="traits-grid">
-                        <div class="trait-card">
-                            <div class="trait-icon">🧠</div>
-                            <h3>Strategic Thinker</h3>
-                            <p>Calm, analytical approach to complex problems</p>
-                        </div>
-                        <div class="trait-card">
-                            <div class="trait-icon">🚀</div>
-                            <h3>Mission-Driven</h3>
-                            <p>AI for positive social impact</p>
-                        </div>
-                        <div class="trait-card">
-                            <div class="trait-icon">👥</div>
-                            <h3>Leader</h3>
-                            <p>President of university study circle</p>
-                        </div>
-                        <div class="trait-card">
-                            <div class="trait-icon">💡</div>
-                            <h3>Innovator</h3>
-                            <p>High emotional intelligence</p>
-                        </div>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop" alt="AI & Machine Learning">
+                        <div class="service-icon">🤖</div>
                     </div>
-                    
-                    <div class="personality-badge">
-                        <span class="badge-label">Personality Type:</span>
-                        <span class="badge-value">ENTJ</span>
+                    <div class="service-content">
+                        <h3>AI & Machine<br>Learning</h3>
+                        <ul>
+                            <li>Neural Networks</li>
+                            <li>Deep Learning Models</li>
+                            <li>Computer Vision</li>
+                            <li>NLP Solutions</li>
+                            <li>Predictive Analytics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop" alt="Domain Expertise">
+                        <div class="service-icon">💡</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Domain Expertise</h3>
+                        <ul>
+                            <li>Machine Learning</li>
+                            <li>Data Engineering</li>
+                            <li>Cloud Architecture</li>
+                            <li>MLOps</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop" alt="Development">
+                        <div class="service-icon">💻</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Development</h3>
+                        <ul>
+                            <li>Full Stack Development</li>
+                            <li>API Design</li>
+                            <li>Database Management</li>
+                            <li>Cloud Deployment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop" alt="Business & Service">
+                        <div class="service-icon">📊</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Business & Service</h3>
+                        <ul>
+                            <li>Strategy & Consulting</li>
+                            <li>Project Management</li>
+                            <li>Technical Leadership</li>
+                            <li>Client Relations</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3D Projects Carousel Section -->
-    <section id="projects" class="projects-3d">
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">MY PROJECTS</h2>
-            <p class="section-subtitle">25 AI Solutions Transforming Industries</p>
+            <p class="section-subtitle">Innovative AI solutions transforming industries</p>
             
-            <div class="carousel-wrapper">
-                <button class="carousel-nav prev" id="prevBtn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="animated-slider-container">
+                <button class="nav-arrow left-arrow" id="prevProject">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                         <polyline points="15 18 9 12 15 6"></polyline>
                     </svg>
                 </button>
 
-                <div class="carousel-container">
-                    <div class="carousel-track">
-                        <!-- Project 1 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=500&fit=crop" alt="AI Health Advisor">
-                                <div class="project-info">
+                <div class="animated-slider">
+                    <div class="slides-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="animated-slide active">
+                            <div class="slide-content">
+                                <div class="slide-image">
+                                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&h=600&fit=crop" alt="AI Health Advisor">
+                                </div>
+                                <div class="slide-info">
+                                    <span class="slide-number">01</span>
                                     <h3>AI Health Advisor</h3>
-                                    <p>Neural network–based multi-disease prediction system</p>
+                                    <p>Neural network–based multi-disease prediction system with advanced diagnostics</p>
+                                    <div class="slide-tags">
+                                        <span>Neural Networks</span>
+                                        <span>Healthcare</span>
+                                        <span>Python</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Project 2 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=500&h=500&fit=crop" alt="COVID-19 Alert">
-                                <div class="project-info">
+                        <!-- Slide 2 -->
+                        <div class="animated-slide">
+                            <div class="slide-content">
+                                <div class="slide-image">
+                                    <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=1000&h=600&fit=crop" alt="COVID-19 Alert">
+                                </div>
+                                <div class="slide-info">
+                                    <span class="slide-number">02</span>
                                     <h3>COVID-19 Emergency Alert</h3>
-                                    <p>Intelligent emergency alert system using ML</p>
+                                    <p>Intelligent emergency alert system using ML and automated alarms</p>
+                                    <div class="slide-tags">
+                                        <span>Machine Learning</span>
+                                        <span>IoT</span>
+                                        <span>Real-time</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Project 3 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=500&h=500&fit=crop" alt="Smart Crop Yield">
-                                <div class="project-info">
+                        <!-- Slide 3 -->
+                        <div class="animated-slide">
+                            <div class="slide-content">
+                                <div class="slide-image">
+                                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1000&h=600&fit=crop" alt="Smart Crop">
+                                </div>
+                                <div class="slide-info">
+                                    <span class="slide-number">03</span>
                                     <h3>Smart Crop Yield Prediction</h3>
-                                    <p>Computer vision and ML system for agriculture</p>
+                                    <p>Computer vision and ML system for agricultural optimization</p>
+                                    <div class="slide-tags">
+                                        <span>Computer Vision</span>
+                                        <span>Agriculture</span>
+                                        <span>ML</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Project 4 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=500&h=500&fit=crop" alt="AI Farmer Expert">
-                                <div class="project-info">
+                        <!-- Slide 4 -->
+                        <div class="animated-slide">
+                            <div class="slide-content">
+                                <div class="slide-image">
+                                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1000&h=600&fit=crop" alt="AI Farmer">
+                                </div>
+                                <div class="slide-info">
+                                    <span class="slide-number">04</span>
                                     <h3>AI Expert System for Farmers</h3>
-                                    <p>Intelligent agricultural advisory system in Urdu</p>
+                                    <p>Intelligent agricultural advisory system in Urdu language</p>
+                                    <div class="slide-tags">
+                                        <span>NLP</span>
+                                        <span>Urdu</span>
+                                        <span>Expert System</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Project 5 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=500&h=500&fit=crop" alt="Smart Stethoscope">
-                                <div class="project-info">
+                        <!-- Slide 5 -->
+                        <div class="animated-slide">
+                            <div class="slide-content">
+                                <div class="slide-image">
+                                    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1000&h=600&fit=crop" alt="Stethoscope">
+                                </div>
+                                <div class="slide-info">
+                                    <span class="slide-number">05</span>
                                     <h3>Smart Stethoscope</h3>
-                                    <p>AI-based heart and lung sound analysis</p>
+                                    <p>AI-based heart and lung sound analysis for diagnostics</p>
+                                    <div class="slide-tags">
+                                        <span>Audio Analysis</span>
+                                        <span>Deep Learning</span>
+                                        <span>Medical</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Project 6 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=500&fit=crop" alt="Stock Market Advisor">
-                                <div class="project-info">
+                        <!-- Slide 6 -->
+                        <div class="animated-slide">
+                            <div class="slide-content">
+                                <div class="slide-image">
+                                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1000&h=600&fit=crop" alt="Stock Market">
+                                </div>
+                                <div class="slide-info">
+                                    <span class="slide-number">06</span>
                                     <h3>Stock Market AI Advisor</h3>
-                                    <p>Technical, sentiment, and order-flow analysis</p>
+                                    <p>Technical, sentiment, and order-flow analysis for trading</p>
+                                    <div class="slide-tags">
+                                        <span>FinTech</span>
+                                        <span>Sentiment Analysis</span>
+                                        <span>Trading</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                    
-
-                        <!-- Project 8 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=500&fit=crop" alt="Customer Segmentation">
-                                <div class="project-info">
+                        <!-- Slide 7 -->
+                        <div class="animated-slide">
+                            <div class="slide-content">
+                                <div class="slide-image">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&h=600&fit=crop" alt="Customer Segmentation">
+                                </div>
+                                <div class="slide-info">
+                                    <span class="slide-number">07</span>
                                     <h3>Customer Segmentation System</h3>
-                                    <p>Advanced clustering techniques for analytics</p>
+                                    <p>Advanced clustering techniques for market analysis</p>
+                                    <div class="slide-tags">
+                                        <span>Clustering</span>
+                                        <span>Analytics</span>
+                                        <span>Marketing</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Project 9 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=500&fit=crop" alt="Disease Prediction">
-                                <div class="project-info">
-                                    <h3>Neural Network Disease Prediction</h3>
-                                    <p>Deep learning based prediction system</p>
+                        <!-- Slide 8 -->
+                        <div class="animated-slide">
+                            <div class="slide-content">
+                                <div class="slide-image">
+                                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1000&h=600&fit=crop" alt="Resume Screening">
+                                </div>
+                                <div class="slide-info">
+                                    <span class="slide-number">08</span>
+                                    <h3>AI Resume Screening</h3>
+                                    <p>Intelligent ranking system for candidate evaluation</p>
+                                    <div class="slide-tags">
+                                        <span>NLP</span>
+                                        <span>HR Tech</span>
+                                        <span>Automation</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Project 10 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=500&fit=crop" alt="School Evaluation Dashboard">
-                                <div class="project-info">
-                                    <h3>School Evaluation AI Dashboard</h3>
-                                    <p>Automated scoring and certificate generation</p>
+                        <!-- Slide 9 -->
+                        <div class="animated-slide">
+                            <div class="slide-content">
+                                <div class="slide-image">
+                                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1000&h=600&fit=crop" alt="Fake News">
+                                </div>
+                                <div class="slide-info">
+                                    <span class="slide-number">09</span>
+                                    <h3>Fake News Detection</h3>
+                                    <p>NLP-powered system for identifying misinformation</p>
+                                    <div class="slide-tags">
+                                        <span>NLP</span>
+                                        <span>Classification</span>
+                                        <span>Media</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Project 11 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=500&h=500&fit=crop" alt="Resume Screening">
-                                <div class="project-info">
-                                    <h3>AI Resume Screening System</h3>
-                                    <p>Intelligent ranking system for candidates</p>
+                        <!-- Slide 10 -->
+                        <div class="animated-slide">
+                            <div class="slide-content">
+                                <div class="slide-image">
+                                    <img src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?w=1000&h=600&fit=crop" alt="Face Mask">
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 12 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=500&h=500&fit=crop" alt="Fake News Detection">
-                                <div class="project-info">
-                                    <h3>Fake News Detection System</h3>
-                                    <p>NLP-powered misinformation identifier</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 13 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?w=500&h=500&fit=crop" alt="Face Mask Detection">
-                                <div class="project-info">
-                                    <h3>Face Mask Detection System</h3>
-                                    <p>CNN-based real-time detection monitoring</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 14 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=500&fit=crop" alt="Healthcare Chatbot">
-                                <div class="project-info">
-                                    <h3>AI Healthcare Chatbot</h3>
-                                    <p>Intelligent health assistance conversation system</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 15 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=500&h=500&fit=crop" alt="Crop Disease Detection">
-                                <div class="project-info">
-                                    <h3>Crop Disease Detection System</h3>
-                                    <p>Deep learning for agricultural disease identification</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 16 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1516321318423-f06f70504504?w=500&h=500&fit=crop" alt="Student Performance">
-                                <div class="project-info">
-                                    <h3>Student Performance Prediction</h3>
-                                    <p>ML system for academic outcome forecasting</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 17 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop" alt="Traffic Accident Prediction">
-                                <div class="project-info">
-                                    <h3>Traffic Accident Prediction</h3>
-                                    <p>Machine learning based accident forecasting</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 18 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1504711331281-36f86b002691?w=500&h=500&fit=crop" alt="Emotion Detection">
-                                <div class="project-info">
-                                    <h3>Emotion Detection from Text</h3>
-                                    <p>NLP sentiment analysis system</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 19 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=500&fit=crop" alt="Recommendation System">
-                                <div class="project-info">
-                                    <h3>AI Recommendation System</h3>
-                                    <p>Personalized products and courses recommendation</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 20 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1516557070061-c3242ca7cb67?w=500&h=500&fit=crop" alt="Speech-to-Text">
-                                <div class="project-info">
-                                    <h3>Speech-to-Text Analysis</h3>
-                                    <p>Keyword extraction from audio content</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 21 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=500&fit=crop" alt="Medical Image Diagnosis">
-                                <div class="project-info">
-                                    <h3>Medical Image Diagnosis</h3>
-                                    <p>Deep learning for X-ray and scan analysis</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 22 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=500&h=500&fit=crop" alt="Virtual Health Assistant">
-                                <div class="project-info">
-                                    <h3>Virtual Health Assistant</h3>
-                                    <p>AI-Powered health guidance system</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 23 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=500&h=500&fit=crop" alt="Anomaly Detection">
-                                <div class="project-info">
-                                    <h3>Anomaly Detection System</h3>
-                                    <p>Fraud and intrusion detection platform</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 24 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop" alt="Smart Surveillance">
-                                <div class="project-info">
-                                    <h3>Smart Surveillance System</h3>
-                                    <p>Activity recognition and monitoring</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 25 -->
-                        <div class="carousel-item">
-                            <div class="project-card-3d">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop" alt="Predictive Analytics Dashboard">
-                                <div class="project-info">
-                                    <h3>Predictive Analytics Dashboard</h3>
-                                    <p>Data-driven decision making platform</p>
+                                <div class="slide-info">
+                                    <span class="slide-number">10</span>
+                                    <h3>Face Mask Detection</h3>
+                                    <p>CNN-based real-time mask compliance monitoring</p>
+                                    <div class="slide-tags">
+                                        <span>CNN</span>
+                                        <span>Computer Vision</span>
+                                        <span>Safety</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <button class="carousel-nav next" id="nextBtn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <button class="nav-arrow right-arrow" id="nextProject">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                         <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
                 </button>
             </div>
 
-            <div class="carousel-indicators">
-                <div class="indicator-info">
-                    <span class="current-index">1</span>
-                    <span class="separator">/</span>
-                    <span class="total-items">25</span>
-                </div>
+            <div class="slider-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
+                <span class="dot" data-index="5"></span>
+                <span class="dot" data-index="6"></span>
+                <span class="dot" data-index="7"></span>
+                <span class="dot" data-index="8"></span>
+                <span class="dot" data-index="9"></span>
+            </div>
+
+            <div class="project-counter">
+                <span class="current-project">01</span>
+                <span class="separator">/</span>
+                <span class="total-projects">10</span>
             </div>
         </div>
     </section>
-<body>
-    <div class="container">
-        <header class="header">
-            <h1 class="title">Perspectives on Intelligence</h1>
-            <p class="subtitle">Insights from the intersection of humanity and technology.</p>
-        </header>
-
-        <div class="carousel-wrapper">
-            <div class="carousel-container">
-                <div class="carousel">
-                    <!-- Card 1 -->
-                    <div class="card active">
-                        <div class="card-image">
-                            <img src="ty.jpeg" alt="AI Engineer" />
-                        </div>
-                        <div class="card-content">
-                            <div class="quote-icon">❝</div>
-                            <p class="quote-text">"I don't build AI to replace humans. I build AI to protect lives and uplift humanity."</p>
-                            <div class="author">
-                                <span class="author-line"></span>
-                                <span class="author-title">AI ENGINEER</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="ui.jpeg" alt="AI Engineer" />
-                        </div>
-                        <div class="card-content">
-                            <div class="quote-icon">❝</div>
-                            <p class="quote-text">"For me, AI is not about code—it's about creating solutions that save lives and serve society."</p>
-                            <div class="author">
-                                <span class="author-line"></span>
-                                <span class="author-title">AI ENGINEER</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="x.jpeg" alt="AI Engineer" />
-                        </div>
-                        <div class="card-content">
-                            <div class="quote-icon">❝</div>
-                            <p class="quote-text">"True intelligence in AI is measured by how much positive impact it creates in the real world."</p>
-                            <div class="author">
-                                <span class="author-line"></span>
-                                <span class="author-title">AI ENGINEER</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="re.jpeg" alt="AI Engineer" />
-                        </div>
-                        <div class="card-content">
-                            <div class="quote-icon">❝</div>
-                            <p class="quote-text">"My mission is to use artificial intelligence as a force for good, turning data into hope and innovation into life-saving action."</p>
-                            <div class="author">
-                                <span class="author-line"></span>
-                                <span class="author-title">AI ENGINEER</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
 
     <!-- Achievements Section -->
     <section id="achievements" class="achievements">
@@ -619,11 +512,11 @@ My goal is simple: use AI to create real, positive change in the world.
                     <div class="contact-details">
                         <div class="contact-item">
                             <span class="contact-label">Email</span>
-                            <a href="mailto:hello@example.com">muhammadahmediqbal12@gmail.com</a>
+                            <a href="Muhammadahmediqbal12@gmail.com">muhammadahmediqbal12@gmail.com</a>
                         </div>
                         <div class="contact-item">
                             <span class="contact-label">Phone</span>
-                            <a href="tel:+1234567890">+92 3285788712</a>
+                            <a href="tel:+1234567890">+923285788712</a>
                         </div>
                     </div>
                     <div class="social-links">
@@ -636,21 +529,7 @@ My goal is simple: use AI to create real, positive change in the world.
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <h3>Send a Message</h3>
-                    <form>
-                        <div class="form-row">
-                            <input type="text" placeholder="Full Name" required>
-                            <input type="email" placeholder="Email Address" required>
-                        </div>
-                        <div class="form-row">
-                            <input type="tel" placeholder="Phone No.">
-                            <input type="text" placeholder="Subject">
-                        </div>
-                        <textarea placeholder="Message" rows="6" required></textarea>
-                        <button type="submit" class="btn-primary btn-block">Send Message</button>
-                    </form>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -668,7 +547,6 @@ My goal is simple: use AI to create real, positive change in the world.
                     <ul>
                         <li><a href="#about">About</a></li>
                         <li><a href="#work">Work</a></li>
-                        <li><a href="#profile">Profile</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -676,15 +554,15 @@ My goal is simple: use AI to create real, positive change in the world.
                 <div class="footer-col">
                     <h4>Connect</h4>
                     <div class="footer-social">
-                        <a href="https://www.linkedin.com/in/muhammad-ahmed-iqbal-0ba427269?originalSubdomain=pk" class="social-icon">in</a>
-                        <a href="#" class="social-icon">tw</a>
+                        <a href="inkedin.com/in/muhammad-ahmed-iqbal-0ba427269/" class="social-icon">in</a>
+                        <a href="https://www.facebook.com/profile.php?id=61583825132004" class="social-icon">f</a>
                         <a href="#" class="social-icon">ig</a>
                         <a href="#" class="social-icon">gh</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 All Rights Reserved</p>
+                <p>&copy; 2025 Muhammad Ahmed Iqbal all Rights Reserved</p>
                 <p>Privacy Policy</p>
             </div>
         </div>
